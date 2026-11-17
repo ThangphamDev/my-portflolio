@@ -1,0 +1,574 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Phạm Xuân Thắng</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfolio của Phạm Xuân Thắng – Fullstack Developer. NotaryMS, Đất Lành Nông Thịnh và NFC Care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,500&display=swap">
+<style>
+/* Layout: short single column; projects as a fanned hand of three cards that open into dialogs. */
+:root {
+  --paper: #F4F5F2;
+  --surface: #FFFFFF;
+  --ink: #15202A;
+  --ink-2: #4B5662;
+  --ink-3: #78838D;
+  --line: #DADFDA;
+  --accent: #1F5C55;
+  --accent-soft: #E2ECE9;
+  --on-accent: #F6F7F4;
+  --shadow: 0 1px 2px rgba(21,32,42,.06), 0 18px 40px -16px rgba(21,32,42,.28);
+
+  --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #10161B; --surface: #172028; --ink: #E6EBE8; --ink-2: #A3AEB5; --ink-3: #7A8690; --line: #26323B;
+    --accent: #7DBFB2; --accent-soft: #1A2E2B; --on-accent: #0F1A18;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 18px 40px -16px rgba(0,0,0,.7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #10161B; --surface: #172028; --ink: #E6EBE8; --ink-2: #A3AEB5; --ink-3: #7A8690; --line: #26323B;
+  --accent: #7DBFB2; --accent-soft: #1A2E2B; --on-accent: #0F1A18;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 18px 40px -16px rgba(0,0,0,.7);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html:has(dialog[open]) { overflow: hidden; }
+html, .d-body, .hand { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--accent) 50%, transparent) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--accent) 50%, transparent); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background-color: var(--accent); }
+::-webkit-scrollbar-button { display: none; }
+body { background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--f-body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 em, h2 em { font-style: normal; color: var(--accent); }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+.label { font: 500 12px/1.4 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+section { padding-block: 96px 0; }
+.sec-head { display: grid; gap: 10px; margin-bottom: 36px; }
+.sec-head h2 { font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; }
+
+/* Header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
+.brand { font: 600 17px/1 var(--f-display); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.nav { display: flex; align-items: center; gap: 22px; font-size: 14px; }
+.nav a { text-decoration: none; color: var(--ink-2); }
+.nav a:hover { color: var(--accent); }
+.nav .cta { color: var(--on-accent); background: var(--accent); padding: 7px 12px; border-radius: 6px; font-weight: 600; }
+.nav .cta:hover { color: var(--on-accent); filter: brightness(1.08); }
+@media (max-width: 680px) { .nav a:not(.cta) { display: none; } .nav { gap: 10px; } }
+.lang { font: 500 12px/1 var(--f-mono); letter-spacing: .06em; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 6px; padding: 7px 9px; cursor: pointer; }
+
+/* Hero */
+.hero { padding-block: 80px 56px; display: grid; gap: 48px; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: end; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-block: 48px 40px; gap: 32px; } }
+.hero h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.05; margin-top: 16px; }
+.hero .lede { margin-top: 20px; max-width: 52ch; color: var(--ink-2); font-size: 17px; }
+.actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 8px; font: 600 15px/1 var(--f-body); text-decoration: none; cursor: pointer; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn.ghost:hover { background: var(--accent-soft); }
+.running { background: var(--accent); color: var(--on-accent); border-radius: 14px; padding: 22px 24px; }
+.running .label { color: inherit; opacity: .72; }
+.running ul { margin-top: 14px; display: grid; gap: 12px; }
+.running li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 10px; font-size: 15px; }
+.running .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--on-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--on-accent) 22%, transparent); transform: translateY(-1px); }
+.running .dom { font: 400 12.5px/1 var(--f-mono); opacity: .72; }
+.proof { border-top: 2px solid var(--accent); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.proof > div { padding: 20px 20px 4px 0; }
+.proof > div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.proof b { display: block; font: 500 36px/1.1 var(--f-display); color: var(--accent); font-variant-numeric: tabular-nums; }
+.proof span { display: block; margin-top: 4px; font-size: 13.5px; color: var(--ink-2); line-height: 1.4; }
+@media (max-width: 760px) {
+  .proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proof > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .proof > div:nth-child(n+3) { padding-top: 16px; }
+}
+
+/* About */
+.about { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px; align-items: start; }
+@media (max-width: 820px) { .about { grid-template-columns: 1fr; gap: 28px; } }
+.me { position: relative; max-width: 260px; isolation: isolate; }
+.me img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; }
+.me::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--accent); border-radius: 14px; z-index: -1; }
+@media (max-width: 820px) { .me { max-width: 200px; } }
+.story { display: grid; gap: 16px; max-width: 62ch; }
+.story h2 { font-size: clamp(30px, 3.6vw, 42px); line-height: 1.12; }
+.story p { color: var(--ink-2); font-size: 16.5px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.facts span { font-size: 13.5px; padding: 6px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.ways-label { margin-top: 10px; }
+.ways { margin-top: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ways > div { border-top: 2px solid var(--accent); padding-top: 12px; min-width: 0; }
+.ways b { display: block; font-weight: 600; font-size: 15px; }
+.ways span { display: block; margin-top: 4px; font-size: 14px; color: var(--ink-2); }
+@media (max-width: 640px) { .ways { grid-template-columns: 1fr; } }
+
+/* Hand of project cards */
+.hand { position: relative; height: 500px; }
+.pcard {
+  --x: 0px; --r: 0deg; --y: 0px;
+  position: absolute; left: 50%; top: 30px; width: 310px; height: 410px;
+  transform: translateX(-50%) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+  transform-origin: 50% 120%;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .3s, opacity .3s, border-color .3s;
+  display: flex; flex-direction: column; text-align: left; padding: 0; overflow: hidden; cursor: pointer;
+  border-radius: 20px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); box-shadow: var(--shadow);
+  font: inherit;
+}
+.pcard:nth-child(1) { --x: -220px; --r: -11deg; --y: 26px; z-index: 1; }
+.pcard:nth-child(2) { z-index: 2; }
+.pcard:nth-child(3) { --x: 220px; --r: 11deg; --y: 26px; z-index: 1; }
+.hand:hover .pcard:nth-child(1), .hand:focus-within .pcard:nth-child(1) { --x: -340px; --r: -6deg; --y: 14px; }
+.hand:hover .pcard:nth-child(3), .hand:focus-within .pcard:nth-child(3) { --x: 340px; --r: 6deg; --y: 14px; }
+.hand:hover .pcard:not(:hover) { opacity: .85; }
+.hand .pcard:hover, .hand .pcard:focus-visible { --y: -24px; --r: 0deg; z-index: 3; opacity: 1; border-color: var(--accent); outline: none; box-shadow: 0 30px 60px -22px color-mix(in srgb, var(--accent) 60%, transparent); }
+@media (min-width: 821px) and (max-width: 1100px) {
+  .pcard:nth-child(1) { --x: -170px; } .pcard:nth-child(3) { --x: 170px; }
+  .hand:hover .pcard:nth-child(1), .hand:focus-within .pcard:nth-child(1) { --x: -250px; }
+  .hand:hover .pcard:nth-child(3), .hand:focus-within .pcard:nth-child(3) { --x: 250px; }
+}
+.pc-cover { display: block; position: relative; height: 180px; flex: none; background: var(--accent-soft); overflow: hidden; }
+.pc-cover img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+.pc-peek { position: absolute; inset: 0; background: var(--accent); color: var(--on-accent); padding: 20px 22px; display: grid; align-content: center; gap: 10px; opacity: 0; transform: translateY(14px); transition: opacity .3s, transform .3s; }
+.pc-peek span { display: block; font-size: 14.5px; line-height: 1.4; padding-left: 16px; position: relative; }
+.pc-peek span::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 2px; background: currentColor; }
+.pcard:hover .pc-peek, .pcard:focus-visible .pc-peek { opacity: 1; transform: none; }
+.pc-body { display: flex; flex-direction: column; gap: 8px; padding: 20px 22px 18px; flex: 1; position: relative; }
+.pc-rank { position: absolute; top: 20px; right: 22px; font: 500 12px/1 var(--f-mono); color: var(--accent); letter-spacing: .08em; }
+.pc-tag { display: block; font: 500 11.5px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.pc-name { display: block; font: 500 29px/1.1 var(--f-display); margin-top: 4px; }
+.pc-line { display: block; color: var(--ink-2); font-size: 15px; }
+.pc-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.pc-pill { font: 500 11.5px/1 var(--f-mono); padding: 6px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.pc-more { font-weight: 600; font-size: 14px; color: var(--accent); }
+.hint { text-align: center; color: var(--ink-3); font-size: 14px; }
+.hint .touch { display: none; }
+
+@media (max-width: 820px), (hover: none) and (pointer: coarse) {
+  .hand { height: auto; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 4px 24px; }
+  .hand .pcard, .hand .pcard:hover { position: relative; left: auto; top: auto; flex: 0 0 min(300px, 84%); height: auto; min-height: 430px; transform: none; scroll-snap-align: center; opacity: 1; }
+  .pc-cover { height: auto; background: none; }
+  .pc-cover img { height: 140px; }
+  .pc-peek { position: static; opacity: 1; transform: none; padding: 14px 18px; gap: 6px; }
+  .hint .desk { display: none; } .hint .touch { display: inline; }
+}
+@media (prefers-reduced-motion: reduce) { .pcard, .pc-peek { transition: none; } html { scroll-behavior: auto; } }
+
+/* Project dialog */
+dialog.detail { width: min(980px, 100vw - 24px); max-height: min(92vh, 100dvh - 24px); padding: 0; border: 0; border-radius: 18px; background: var(--paper); color: var(--ink); box-shadow: var(--shadow); overflow: hidden; }
+dialog.detail[open] { display: flex; flex-direction: column; }
+dialog.detail::backdrop { background: color-mix(in srgb, #0B1215 60%, transparent); backdrop-filter: blur(4px); }
+.d-head { flex: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 24px; background: var(--accent); color: var(--on-accent); }
+.d-head .label { color: inherit; opacity: .85; }
+.d-close { font: 600 14px/1 var(--f-body); color: var(--accent); background: var(--on-accent); border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer; white-space: nowrap; }
+.d-body { padding: 28px 28px 32px; display: grid; gap: 26px; overflow-y: auto; overscroll-behavior: contain; }
+@media (max-width: 600px) { .d-body { padding: 20px 16px 28px; } .d-head { padding: 12px 16px; } }
+.d-title { display: grid; gap: 8px; }
+.d-title h2 { font-size: clamp(32px, 4vw, 46px); line-height: 1.05; }
+.d-title p { color: var(--ink-2); font-size: 17px; max-width: 60ch; }
+.d-title a { color: var(--accent); font-weight: 600; font-size: 14px; text-decoration: none; }
+.shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); min-width: 0; }
+.media { display: grid; gap: 12px; }
+.media.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.media.phones { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px; }
+.phone { width: 120px; border-radius: 20px; padding: 6px; background: #0E141A; }
+.phone img { border-radius: 15px; }
+.pair { display: flex; gap: 10px; }
+@media (max-width: 640px) { .media.two, .media.phones { grid-template-columns: 1fr; } .pair { justify-content: center; } }
+.cap { font-size: 13.5px; color: var(--ink-3); }
+.media > .shot:first-child img { max-height: 360px; width: 100%; object-fit: cover; object-position: left top; }
+.nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--accent); }
+.nums > div { padding: 14px 16px 0 0; min-width: 0; }
+.nums > div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+.nums b { display: block; font: 500 26px/1.15 var(--f-display); color: var(--accent); }
+.nums span { display: block; font-size: 13.5px; color: var(--ink-2); margin-top: 2px; }
+@media (max-width: 560px) { .nums { grid-template-columns: 1fr; } .nums > div + div { padding-left: 0; border-left: 0; } }
+.feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 760px) { .feats { grid-template-columns: 1fr; } }
+.feat { padding: 16px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); min-width: 0; }
+.feat.star { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.feat b { display: block; font-weight: 600; font-size: 15.5px; }
+.feat p { margin-top: 6px; font-size: 14px; color: var(--ink-2); }
+.feat.star p { color: inherit; opacity: .88; }
+.d-foot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 40px; }
+@media (max-width: 700px) { .d-foot { grid-template-columns: 1fr; } }
+.d-foot p:not(.label) { color: var(--ink-2); margin-top: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chips span { font: 400 12.5px/1 var(--f-mono); padding: 7px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+
+/* Journey */
+.tl { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 4px 32px; padding: 18px 0; border-top: 1px solid var(--line); }
+.tl:first-child { border-top: 2px solid var(--accent); }
+@media (max-width: 640px) { .tl { grid-template-columns: 1fr; } }
+.tl .when { font: 500 13.5px/1.7 var(--f-mono); color: var(--accent); font-variant-numeric: tabular-nums; }
+.tl h3 { font-size: 22px; line-height: 1.3; }
+.tl p { color: var(--ink-2); font-size: 15px; margin-top: 2px; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 760px) { .skills { grid-template-columns: 1fr; } }
+.skills > div { padding: 16px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); min-width: 0; }
+.skills h3 { font: 500 11.5px/1.4 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.skills p { font-size: 15px; }
+
+/* Contact */
+.contact { margin-top: 96px; background: var(--accent); color: var(--on-accent); }
+.contact .wrap { padding-block: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: end; }
+@media (max-width: 820px) { .contact .wrap { grid-template-columns: 1fr; padding-block: 48px; } }
+.contact .label { color: inherit; opacity: .72; }
+.contact h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.1; margin-top: 10px; }
+.contact p:not(.label) { margin-top: 12px; opacity: .85; }
+.c-row { display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid color-mix(in srgb, var(--on-accent) 25%, transparent); }
+.c-row .k { font: 500 11.5px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.c-row .v { font-size: 15.5px; overflow-wrap: anywhere; user-select: all; }
+.c-row a.v { text-decoration: none; user-select: auto; }
+.c-row a.v:hover { text-decoration: underline; }
+.copy { font: 600 12px/1 var(--f-body); color: inherit; background: transparent; border: 1px solid color-mix(in srgb, var(--on-accent) 45%, transparent); border-radius: 6px; padding: 7px 10px; cursor: pointer; min-width: 64px; }
+footer { background: var(--accent); color: var(--on-accent); }
+footer .wrap { padding-block: 0 28px; font-size: 13px; opacity: .72; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Phạm Xuân Thắng<span>.</span></a>
+    <nav class="nav" aria-label="Điều hướng" data-en-label="Navigation">
+      <a href="#ve-minh" data-en="About">Về mình</a>
+      <a href="#du-an" data-en="Projects">Dự án</a>
+      <a href="#hanh-trinh" data-en="Journey">Hành trình</a>
+      <a href="#ky-nang" data-en="Skills">Kỹ năng</a>
+      <a class="cta" href="#lien-he" data-en="Contact">Liên hệ</a>
+      <button class="lang" id="lang-toggle" type="button" aria-label="Switch to English" data-en-label="Chuyển sang tiếng Việt">EN</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="label" data-en="Fullstack Developer · Node.js &amp; React · Ho Chi Minh City">Fullstack Developer · Node.js &amp; React · TP. Hồ Chí Minh</p>
+        <h1 data-en="More than writing code, I want to build things that are &lt;em&gt;truly useful&lt;/em&gt;.">Không chỉ viết code, mình muốn tạo ra những điều <em>thực sự có ích</em>.</h1>
+        <p class="lede" data-en="I believe technology is valued not for its complexity but for the problems it solves. With a love for exploring and creating, I want to turn ideas into real products that offer useful solutions and make life a little better.">Mình tin rằng giá trị của công nghệ không nằm ở sự phức tạp, mà ở những vấn đề nó giải quyết được. Với niềm đam mê khám phá và sáng tạo, mình luôn mong muốn biến những ý tưởng thành sản phẩm thực tế, mang đến những giải pháp hữu ích và góp phần làm cuộc sống tốt đẹp hơn.</p>
+        <div class="actions">
+          <a class="btn primary" href="#du-an" data-en="Explore projects">Khám phá dự án</a>
+          <a class="btn ghost" href="#lien-he" data-en="Get in touch">Liên hệ với mình</a>
+        </div>
+      </div>
+      <aside class="running" aria-label="Sản phẩm đang vận hành" data-en-label="Products in production">
+        <p class="label" data-en="Running now">Đang vận hành</p>
+        <ul>
+          <li><span class="dot"></span><span>NotaryMS</span><span class="dom">vpccsodaklak.vn</span></li>
+          <li><span class="dot"></span><span>Đất Lành Nông Thịnh</span><span class="dom">nongthinh.vn</span></li>
+          <li><span class="dot"></span><span>NFC Care</span><span class="dom" data-en="B2B dental">nha khoa B2B</span></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="proof">
+      <div><b data-en="15 min">15 phút</b><span data-en="for a full notary case file, down from 60–90">cho một bộ hồ sơ công chứng, thay vì 60–90 phút</span></div>
+      <div><b data-en="10 apps">10 ứng dụng</b><span data-en="web and mobile apps I helped build, running for real">web và mobile mình đã xây dựng, đang chạy thật</span></div>
+      <div><b data-en="3 fields">3 lĩnh vực</b><span data-en="notary, agriculture, dental care">công chứng, nông nghiệp, nha khoa</span></div>
+      <div><b data-en="1+ year">1+ năm</b><span data-en="building real products, since 11/2025">làm sản phẩm thực tế, từ 11/2025</span></div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="ve-minh">
+      <div class="about">
+        <div class="me"><img src="img/avatar.webp" width="480" height="600" alt="Ảnh chân dung Phạm Xuân Thắng" data-en-alt="Portrait of Phạm Xuân Thắng"></div>
+        <div class="story">
+          <p class="label" data-en="About me">Về mình</p>
+          <h2 data-en="From sunny, windy central Vietnam, carrying &lt;em&gt;big ambitions&lt;/em&gt;.">Từ miền Trung nắng gió, mang theo <em>khát vọng vươn xa</em>.</h2>
+          <p data-en="I&#x27;m Thắng, a Fullstack Developer who grew up in sunny, windswept Nghệ An, where hardship built my drive to rise and my hope for a better future. With a passion for technology, I chose programming to chase that dream: to become a skilled, responsible developer who builds products that truly help people.">Mình là Thắng, một Fullstack Developer lớn lên trên mảnh đất Nghệ An đầy nắng gió, nơi những khó khăn nuôi dưỡng trong mình ý chí vươn lên và khát vọng về một tương lai tốt đẹp hơn. Mang theo niềm đam mê công nghệ, mình chọn lập trình để theo đuổi hoài bão ấy, với mong muốn không chỉ trở thành một developer giỏi chuyên môn, có trách nhiệm với công việc mà còn tạo ra những sản phẩm thực sự có ích cho cuộc sống.</p>
+          <div class="facts">
+            <span data-en="Nghệ An, Vietnam">Nghệ An, Việt Nam</span>
+            <span data-en="Living in Ho Chi Minh City">Hiện sống tại TP.HCM</span>
+            <span>Fullstack Developer</span>
+          </div>
+          <p class="label ways-label" data-en="How I work">Cách mình làm nghề</p>
+          <div class="ways">
+            <div><b data-en="Understand before building.">Hiểu trước khi xây dựng.</b><span data-en="A good solution starts with understanding the right problem.">Một giải pháp tốt bắt đầu từ việc hiểu đúng vấn đề.</span></div>
+            <div><b data-en="Simple, but polished.">Đơn giản nhưng chỉn chu.</b><span data-en="Clear, maintainable code built for stability.">Viết code rõ ràng, dễ bảo trì và hướng đến sự ổn định.</span></div>
+            <div><b data-en="Always improving.">Không ngừng cải thiện.</b><span data-en="Finding ways to do better with every experience.">Luôn tìm cách làm tốt hơn qua từng trải nghiệm.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="du-an">
+      <div class="sec-head">
+        <p class="label" data-en="Projects">Dự án</p>
+        <h2 data-en="Products that &lt;em&gt;run every day&lt;/em&gt;">Những sản phẩm <em>đang chạy mỗi ngày</em></h2>
+      </div>
+      <div class="hand">
+        <button class="pcard" type="button" data-open="d-nong" aria-haspopup="dialog">
+          <span class="pc-cover">
+            <img src="img/nongthinh-web.webp" width="1440" height="545" alt="" loading="lazy">
+            <span class="pc-peek">
+              <span data-en="4 apps: store, admin, sales, driver">4 ứng dụng: web, quản trị, bán hàng, tài xế</span>
+              <span data-en="Multi-warehouse, never oversold">Tồn nhiều kho, không bán vượt</span>
+              <span data-en="Instant new-order alerts">Báo đơn mới tức thì</span>
+            </span>
+          </span>
+          <span class="pc-body">
+            <span class="pc-rank">ĐLNT</span>
+            <span class="pc-tag">11/2025 – 05/2026</span>
+            <span class="pc-name">Đất Lành Nông Thịnh</span>
+            <span class="pc-line" data-en="Fertilizer, from order to doorstep.">Bán phân bón tới tận tay nhà nông.</span>
+            <span class="pc-foot"><span class="pc-pill" data-en="Live">Đang vận hành</span><span class="pc-more" data-en="Details →">Chi tiết →</span></span>
+          </span>
+        </button>
+        <button class="pcard" type="button" data-open="d-notary" aria-haspopup="dialog">
+          <span class="pc-cover">
+            <img src="img/notary-form.webp" width="1440" height="900" alt="" loading="lazy">
+            <span class="pc-peek">
+              <span data-en="Enter once, get all 10 documents">Nhập một lần, ra đủ 10 giấy tờ</span>
+              <span data-en="60–90 → 15–20 min per case">60–90 → 15–20 phút mỗi bộ hồ sơ</span>
+              <span data-en="Shared, real-time notary register">Sổ công chứng nhiều người, realtime</span>
+            </span>
+          </span>
+          <span class="pc-body">
+            <span class="pc-rank">NMS</span>
+            <span class="pc-tag" data-en="05/2026 – now">05/2026 – nay</span>
+            <span class="pc-name">NotaryMS</span>
+            <span class="pc-line" data-en="A notary office, digitized.">Số hoá văn phòng công chứng.</span>
+            <span class="pc-foot"><span class="pc-pill" data-en="Live">Đang vận hành</span><span class="pc-more" data-en="Details →">Chi tiết →</span></span>
+          </span>
+        </button>
+        <button class="pcard" type="button" data-open="d-nfc" aria-haspopup="dialog">
+          <span class="pc-cover">
+            <img src="img/nfc-reception.webp" width="1584" height="530" alt="" loading="lazy">
+            <span class="pc-peek">
+              <span data-en="Home-built ID card OCR">OCR thẻ CCCD tự dựng</span>
+              <span data-en="A full events platform">Nền tảng sự kiện trọn gói</span>
+              <span data-en="Payments through 4 gateways">Thanh toán qua 4 cổng</span>
+            </span>
+          </span>
+          <span class="pc-body">
+            <span class="pc-rank">NFC</span>
+            <span class="pc-tag">06/2026 – 11/2026 · Fresher</span>
+            <span class="pc-name">NFC Care</span>
+            <span class="pc-line" data-en="Running dental clinic chains.">Vận hành chuỗi phòng khám nha khoa.</span>
+            <span class="pc-foot"><span class="pc-pill" data-en="Live">Đang vận hành</span><span class="pc-more" data-en="Details →">Chi tiết →</span></span>
+          </span>
+        </button>
+      </div>
+      <p class="hint"><span class="desk" data-en="Hover a project for a quick look, click for details.">Rê chuột lên từng dự án để xem nhanh, bấm để xem chi tiết.</span><span class="touch" data-en="Swipe through, tap a project for details.">Vuốt để xem, chạm vào dự án để xem chi tiết.</span></p>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="hanh-trinh">
+      <div class="sec-head">
+        <p class="label" data-en="Journey">Hành trình</p>
+        <h2 data-en="Where I have &lt;em&gt;been&lt;/em&gt;">Những chặng <em>đã qua</em></h2>
+      </div>
+      <div>
+        <div class="tl"><div class="when">06/2026 – 11/2026</div><div><h3>NFC Care</h3><p>Fullstack Developer (Fresher)</p></div></div>
+        <div class="tl"><div class="when" data-en="05/2026 – now">05/2026 – nay</div><div><h3>NotaryMS</h3><p>Fullstack Developer · vpccsodaklak.vn</p></div></div>
+        <div class="tl"><div class="when">11/2025 – 05/2026</div><div><h3>Đất Lành Nông Thịnh</h3><p>Fullstack Developer · nongthinh.vn</p></div></div>
+        <div class="tl"><div class="when">2022 – 2026</div><div><h3 data-en="HUTECH · Software Engineering">HUTECH · Kỹ thuật phần mềm</h3><p data-en="GPA 3.45 · Outstanding Student 2 years · Top 10 HDBank Hackathon and CJ Design Your Future 2025">GPA 3.45 · 2 năm Sinh viên xuất sắc · Top 10 HDBank Hackathon và CJ Design Your Future 2025</p></div></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="ky-nang">
+      <div class="sec-head">
+        <p class="label" data-en="Skills">Kỹ năng</p>
+        <h2 data-en="Tools I &lt;em&gt;work with&lt;/em&gt;">Công cụ <em>mình hay dùng</em></h2>
+      </div>
+      <div class="skills">
+        <div><h3>Backend</h3><p>NestJS, Express.js, Spring Boot, TypeORM</p></div>
+        <div><h3>Frontend</h3><p>React, Next.js, React Native, Tailwind CSS</p></div>
+        <div><h3 data-en="Databases">Cơ sở dữ liệu</h3><p>PostgreSQL, MySQL, MongoDB, Redis</p></div>
+        <div><h3 data-en="Languages">Ngôn ngữ</h3><p>TypeScript, JavaScript, Java, SQL</p></div>
+        <div><h3 data-en="Infrastructure">Hạ tầng</h3><p>Docker, Nginx, Git, Socket.IO, BullMQ</p></div>
+        <div><h3 data-en="English">Tiếng Anh</h3><p data-en="B1 · technical docs">B1 · đọc tài liệu kỹ thuật</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact" id="lien-he">
+    <div class="wrap">
+      <div>
+        <p class="label" data-en="Contact">Liên hệ</p>
+        <h2 data-en="Maybe we will build something great together?">Biết đâu chúng ta sẽ cùng làm nên một sản phẩm thú vị?</h2>
+        <p data-en="I&#x27;m looking for a Fullstack Developer role with Node.js and React. Drop me a line, I&#x27;m always happy to chat.">Mình đang tìm vị trí Fullstack Developer với Node.js và React. Cứ nhắn, mình luôn sẵn lòng trò chuyện.</p>
+      </div>
+      <div>
+        <div class="c-row"><span class="k">Email</span><span class="v" id="c-email">thangphamxuan097@gmail.com</span><button class="copy" type="button" data-copy="c-email" data-en="Copy">Sao chép</button></div>
+        <div class="c-row"><span class="k" data-en="Phone">Điện thoại</span><span class="v" id="c-phone">0326 314 436</span><button class="copy" type="button" data-copy="c-phone" data-en="Copy">Sao chép</button></div>
+        <div class="c-row"><span class="k">GitHub</span><a class="v" href="https://github.com/ThangphamDev" target="_blank" rel="noopener">github.com/ThangphamDev ↗</a><span></span></div>
+        <div class="c-row"><span class="k">LinkedIn</span><a class="v" href="https://linkedin.com/in/thang-pham-xuan" target="_blank" rel="noopener">linkedin.com/in/thang-pham-xuan ↗</a><span></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap"><span data-en="© 2026 Phạm Xuân Thắng · Built with curiosity and a little persistence.">© 2026 Phạm Xuân Thắng · Được xây dựng bằng sự tò mò và một chút kiên trì.</span><span data-en="Ho Chi Minh City, Vietnam">TP. Hồ Chí Minh, Việt Nam</span></div>
+</footer>
+
+<!-- PROJECT DETAILS -->
+<dialog class="detail" id="d-notary" aria-labelledby="t-notary">
+  <div class="d-head"><span class="label" data-en="05/2026 – now · Fullstack Developer">05/2026 – nay · Fullstack Developer</span><button class="d-close" type="button" data-en="Close ✕">Đóng ✕</button></div>
+  <div class="d-body">
+    <div class="d-title">
+      <h2 id="t-notary">NotaryMS</h2>
+      <p data-en="A notary office&#x27;s case files, registers and invoices, brought into one system.">Hồ sơ, sổ sách và hoá đơn của văn phòng công chứng, gom về một hệ thống.</p>
+      <a href="https://vpccsodaklak.vn" target="_blank" rel="noopener">vpccsodaklak.vn ↗</a>
+    </div>
+    <div class="media">
+      <div class="shot"><img src="img/notary-form.webp" width="1440" height="900" loading="lazy" alt="Màn hình nhập thông tin hồ sơ, một lần nhập cho cả bộ giấy tờ" data-en-alt="Case entry screen, one entry for the whole document set"></div>
+      <p class="cap" data-en="Enter once, get all 10 documents.">Nhập một lần, ra đủ 10 giấy tờ.</p>
+      <div class="media two">
+        <div class="shot"><img src="img/notary-register.webp" width="1440" height="900" loading="lazy" alt="Sổ công chứng điện tử, thông tin khách hàng được làm mờ" data-en-alt="Digital notary register with client data blurred"></div>
+        <div class="shot"><img src="img/notary-newcase.webp" width="1440" height="900" loading="lazy" alt="Chọn loại hồ sơ khi tạo mới" data-en-alt="Choosing a case type"></div>
+      </div>
+    </div>
+    <div class="nums">
+      <div><b data-en="60–90 → 15–20 min">60–90 → 15–20 phút</b><span data-en="per case file">mỗi bộ hồ sơ</span></div>
+      <div><b>100+</b><span data-en="cases a day at one branch">hồ sơ mỗi ngày tại một chi nhánh</span></div>
+      <div><b data-en="Seconds">Vài giây</b><span data-en="for tens of thousands of Excel rows">cho hàng chục nghìn dòng Excel</span></div>
+    </div>
+    <div class="feats">
+      <div class="feat star"><b data-en="One form, the whole file">Một form, đủ bộ hồ sơ</b><p data-en="OOXML engine fills contracts and exports PDF; golden tests check every template.">Engine OOXML điền hợp đồng, xuất PDF; Golden Test kiểm tra từng mẫu.</p></div>
+      <div class="feat star"><b data-en="Reports">Báo cáo thống kê</b><p data-en="Cases, revenue, invoices and staff stats, with drill-down into each item.">Thống kê hồ sơ, doanh thu, hoá đơn và nhân sự, xem chi tiết từng mục.</p></div>
+      <div class="feat star"><b data-en="Real-time register">Sổ công chứng realtime</b><p data-en="Several clerks write at once over SSE; Excel export in seconds.">Nhiều thư ký cùng ghi qua SSE, xuất Excel trong vài giây.</p></div>
+      <div class="feat"><b data-en="E-invoicing">Hoá đơn điện tử</b><p data-en="Issued via Viettel and MISA, with automatic retries.">Phát hành qua Viettel, MISA, tự thử lại khi lỗi.</p></div>
+      <div class="feat"><b data-en="Sequential numbering">Cấp số liên tục</b><p data-en="Transactions with advisory locks for concurrent numbering.">Transaction kết hợp Advisory Lock khi cấp số đồng thời.</p></div>
+      <div class="feat"><b data-en="Role-based access">Phân quyền theo vai trò</b><p data-en="RBAC down to each case, JWT authentication.">Phân quyền RBAC tới từng hồ sơ, xác thực JWT.</p></div>
+    </div>
+    <div class="d-foot">
+      <div><p class="label" data-en="My role">Vai trò</p><p data-en="Built end to end: analysis, design, backend, frontend, deployment.">Làm từ đầu đến cuối: nghiệp vụ, thiết kế, backend, frontend, triển khai.</p></div>
+      <div><p class="label" data-en="Stack">Công nghệ</p><div class="chips"><span>NestJS</span><span>PostgreSQL</span><span>TypeORM</span><span>React</span><span>LibreOffice</span><span>SSE</span><span>Docker</span><span>Nginx</span></div></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-nong" aria-labelledby="t-nong">
+  <div class="d-head"><span class="label">11/2025 – 05/2026 · Fullstack Developer</span><button class="d-close" type="button" data-en="Close ✕">Đóng ✕</button></div>
+  <div class="d-body">
+    <div class="d-title">
+      <h2 id="t-nong">Đất Lành Nông Thịnh</h2>
+      <p data-en="From order to the farmer&#x27;s door: sales, warehouses and drivers in one system.">Từ đơn hàng đến tay nhà nông: bán hàng, kho và tài xế trên cùng một hệ thống.</p>
+      <a href="https://nongthinh.vn" target="_blank" rel="noopener">nongthinh.vn ↗</a>
+    </div>
+    <div class="media phones">
+      <div class="shot"><img src="img/nongthinh-web.webp" width="1440" height="545" loading="lazy" alt="Trang chủ nongthinh.vn" data-en-alt="nongthinh.vn homepage"></div>
+      <div class="pair">
+        <div class="phone"><img src="img/driver-2.webp" width="420" height="950" loading="lazy" alt="App tài xế: hoàn thành giao hàng" data-en-alt="Driver app: completing a delivery"></div>
+        <div class="phone"><img src="img/driver-9.webp" width="420" height="950" loading="lazy" alt="App tài xế: tổng kết cuối ngày" data-en-alt="Driver app: end-of-day summary"></div>
+      </div>
+    </div>
+    <div class="nums">
+      <div><b data-en="4 apps">4 ứng dụng</b><span data-en="store, admin, sales, driver">web, quản trị, bán hàng, tài xế</span></div>
+      <div><b data-en="Multi-warehouse">Nhiều kho</b><span data-en="stock per variant">tồn theo từng biến thể</span></div>
+      <div><b>Realtime</b><span data-en="instant new-order alerts">báo đơn mới tức thì</span></div>
+    </div>
+    <div class="feats">
+      <div class="feat star"><b data-en="Never oversell">Không bán vượt tồn</b><p data-en="Stock deducted with MySQL transactions and row locks.">Trừ kho bằng MySQL Transaction và Row Lock.</p></div>
+      <div class="feat star"><b data-en="Driver app">App tài xế</b><p data-en="Delivery photos, signatures and cash collection in React Native.">Ảnh giao hàng, chữ ký, tiền thu hộ trên React Native.</p></div>
+      <div class="feat star"><b data-en="Fanpage connected">Nối fanpage</b><p data-en="Graph API with signed Messenger webhooks.">Graph API và webhook Messenger có xác thực chữ ký.</p></div>
+    </div>
+    <div class="d-foot">
+      <div><p class="label" data-en="My role">Vai trò</p><p data-en="Built end to end: backend, admin, two mobile apps, deployment.">Làm từ đầu đến cuối: backend, quản trị, 2 app di động, triển khai.</p></div>
+      <div><p class="label" data-en="Stack">Công nghệ</p><div class="chips"><span>NestJS</span><span>MySQL</span><span>Redis</span><span>React</span><span>React Native</span><span>Socket.IO</span><span>FCM</span><span>Docker</span></div></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-nfc" aria-labelledby="t-nfc">
+  <div class="d-head"><span class="label">06/2026 – 11/2026 · Fullstack Developer (Fresher)</span><button class="d-close" type="button" data-en="Close ✕">Đóng ✕</button></div>
+  <div class="d-body">
+    <div class="d-title">
+      <h2 id="t-nfc">NFC Care</h2>
+      <p data-en="A five-product platform for dental clinic chains.">Nền tảng 5 sản phẩm cho chuỗi phòng khám nha khoa.</p>
+    </div>
+    <div class="media">
+      <div class="shot"><img src="img/nfc-reception.webp" width="1584" height="530" loading="lazy" alt="Minh hoạ quầy tiếp đón: khách check-in bằng QR và kết quả đọc thẻ CCCD" data-en-alt="Illustration of the reception desk: QR check-ins and an ID card reading"></div>
+    </div>
+    <div class="nums">
+      <div><b data-en="5 products">5 sản phẩm</b><span data-en="admin, Care, Doctor, Event, Zalo Mini App">quản trị, Care, Doctor, Event, Zalo Mini App</span></div>
+      <div><b data-en="4 gateways">4 cổng</b><span>MoMo, VietQR, ZaloPay, link</span></div>
+      <div><b data-en="In-house OCR">OCR nội bộ</b><span data-en="ID and insurance cards">thẻ CCCD, BHYT</span></div>
+    </div>
+    <div class="feats">
+      <div class="feat star"><b data-en="ID card OCR">OCR thẻ CCCD, BHYT</b><p data-en="In-house OCR built with PaddleOCR and VietOCR; QR check-in.">Tự dựng OCR nội bộ bằng PaddleOCR, VietOCR; check-in bằng QR.</p></div>
+      <div class="feat star"><b data-en="Events platform">Nền tảng sự kiện</b><p data-en="From creating and reviewing events to ticketing, venue rental, check-in and rewards.">Từ tạo, duyệt sự kiện đến bán vé, thuê địa điểm, check-in và tặng thưởng.</p></div>
+      <div class="feat star"><b data-en="Safe payments">Thanh toán an toàn</b><p data-en="Idempotency keys and batch reconciliation.">Idempotency key và đối soát giao dịch theo lô.</p></div>
+      <div class="feat"><b data-en="Service plans">Gói dịch vụ</b><p data-en="Buy and upgrade plans with a cost preview.">Mua, nâng cấp gói, xem trước chi phí.</p></div>
+      <div class="feat"><b data-en="Cashbook">Sổ quỹ, hoá đơn</b><p data-en="Receipts from payments, Viettel e-invoices.">Phiếu thu từ thanh toán, xuất hoá đơn Viettel.</p></div>
+      <div class="feat"><b data-en="Maintenance mode">Chế độ bảo trì</b><p data-en="Switched on from the admin; every app picks it up instantly over SSE, with a countdown.">Bật bảo trì từ trang quản trị, mọi ứng dụng nhận ngay qua SSE kèm đếm ngược.</p></div>
+    </div>
+    <div class="d-foot">
+      <div><p class="label" data-en="My role">Vai trò</p><p data-en="The features above are the parts I owned.">Các tính năng trên là phần mình phụ trách.</p></div>
+      <div><p class="label" data-en="Stack">Công nghệ</p><div class="chips"><span>Express.js</span><span>MongoDB</span><span>Redis</span><span>BullMQ</span><span>Next.js</span><span>React</span><span>Python</span><span>PaddleOCR</span></div></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+// Vietnamese is the markup default; elements carry their English in data-en (HTML), data-en-label / data-en-alt.
+let lang = 'vi';
+const swaps = [['en', 'innerHTML'], ['enLabel', 'aria-label'], ['enAlt', 'alt']];
+function setLang(next) {
+  lang = next;
+  document.documentElement.lang = lang;
+  for (const [key, prop] of swaps) {
+    document.querySelectorAll('[data-' + key.replace(/[A-Z]/g, c => '-' + c.toLowerCase()) + ']').forEach(el => {
+      const viKey = key + 'Vi';
+      if (el.dataset[viKey] === undefined) el.dataset[viKey] = prop === 'innerHTML' ? el.innerHTML : el.getAttribute(prop);
+      const value = lang === 'en' ? el.dataset[key] : el.dataset[viKey];
+      prop === 'innerHTML' ? (el.innerHTML = value) : el.setAttribute(prop, value);
+    });
+  }
+  document.getElementById('lang-toggle').textContent = lang === 'en' ? 'VI' : 'EN';
+  try { localStorage.setItem('lang', lang); } catch {}
+}
+let saved = null;
+try { saved = localStorage.getItem('lang'); } catch {}
+const initial = location.hash === '#en' ? 'en' : location.hash === '#vi' ? 'vi' : saved;
+if (initial === 'en') setLang('en');
+document.getElementById('lang-toggle').addEventListener('click', () => setLang(lang === 'en' ? 'vi' : 'en'));
+
+// Project cards open their detail dialog; "Close" or a click on the backdrop dismisses it.
+document.querySelectorAll('.pcard').forEach(card =>
+  card.addEventListener('click', () => document.getElementById(card.dataset.open).showModal()));
+document.querySelectorAll('dialog.detail').forEach(d => {
+  d.querySelector('.d-close').addEventListener('click', () => d.close());
+  d.addEventListener('click', e => { if (e.target === d) d.close(); });
+});
+
+const t = (vi, en) => (lang === 'en' ? en : vi);
+document.querySelectorAll('.copy').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const el = document.getElementById(btn.dataset.copy);
+    const text = el.textContent.replace(/\s/g, el.id === 'c-phone' ? '' : ' ').trim();
+    const done = () => { btn.textContent = t('Đã chép', 'Copied'); setTimeout(() => (btn.textContent = t('Sao chép', 'Copy')), 1600); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = t('Đã chọn', 'Selected'); };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch { fallback(); }
+  });
+});
+</script>
+
+</body></html>
